@@ -8,7 +8,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "Greetings - should pass canary, yeet!";
+		return "Greetings - new feature needs canary testing, yeet!";
 	}
 
 }
