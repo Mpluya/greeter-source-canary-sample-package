@@ -14,3 +14,9 @@ spec:
       url: ssh://git@github.com/Mpluya/greeter-source-canary-sample-package.git
       ref:
         branch: main
+  serviceClaims:
+    - name: database
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ClassClaim
+        name: customer-database
