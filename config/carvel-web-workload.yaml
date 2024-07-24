@@ -1,14 +1,14 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: greeter-source-canary-sample-package
+  name: carvel-web-workload
   namespace: dev2
   labels:
-    app.kubernetes.io/name: greeter-source-canary-sample-package
-    app.kubernetes.io/part-of: greeter-source-canary-sample-package
+    app.kubernetes.io/name: carvel-web-workload
+    app.kubernetes.io/part-of: carvel-web-workload
     apps.tanzu.vmware.com/carvel-package-workflow: "true"
     apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: server
+    apps.tanzu.vmware.com/workload-type: web
 spec:
   params:
     - name: image_scanner_template_name
@@ -26,9 +26,3 @@ spec:
       url: ssh://git@github.com/Mpluya/greeter-source-canary-sample-package.git
       ref:
         branch: main
-  serviceClaims:
-    - name: database
-      ref:
-        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-        kind: ClassClaim
-        name: customer-database
